@@ -10,6 +10,11 @@ public class Particle {
 	
 	public Particle() {
 	}
+	
+	public Particle(double pXpos, double pYpos) {
+		mXPos = pXpos;
+		mYPos = pYpos;
+	}
 
 	
 	public double getMass() {
@@ -58,6 +63,15 @@ public class Particle {
 
 	public void setEnergy(double pEnergy) {
 		mEnergy = pEnergy;
+	}
+
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Particle { ");
+		builder.append("x=").append(mXPos).append(", y=").append(mYPos).append(" }");
+		return builder.toString();
 	}
 
 }

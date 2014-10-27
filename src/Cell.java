@@ -12,6 +12,7 @@ public class Cell {
 	private int mLeftIndex;
 	private int mRightIndex;
 
+	
 	public Cell() {
 	}
 
@@ -33,6 +34,7 @@ public class Cell {
 		mRightIndex = pRightIndex;
 	}
 
+	
 	public double getXMin() {
 		return mXMin;
 	}
@@ -105,4 +107,19 @@ public class Cell {
 		return mYMax - mYMin;
 	}
 
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cell { x(min)=").append(mXMin);
+		builder.append(", x(max)=").append(mXMax);
+		builder.append(", y(min)=").append(mYMin);
+		builder.append(", y(max)=").append(mYMax);
+		builder.append(", leftChild=").append(mLeftChild == null ? "no" : "yes");
+		builder.append(", rightChild=").append(mRightChild == null ? "no" : "yes");
+		builder.append(", index=[").append(mLeftIndex).append(" / ").append(mRightIndex).append(")");
+		builder.append(" }");
+		return builder.toString();
+	}
+	
 }
